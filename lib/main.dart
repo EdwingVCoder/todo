@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo/models/todo_database.dart';
+import 'package:todo/models/database.dart';
 import 'package:todo/pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await TodoDatabase.initialize();
+  await Database.initialize();
   runApp(
     ChangeNotifierProvider(
-      create: (context) => TodoDatabase(),
+      create: (context) => Database(),
       child: const MyApp(),
     ),
   );
